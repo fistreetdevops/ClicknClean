@@ -1,11 +1,11 @@
 import React from "react";
-import window_cleaning from "../assets/img/ui/icons/1.png";
-import dry_cleaning from "../assets/img/ui/icons/2.png";
-import post_construction from "../assets/img/ui/icons/3.png";
-import pool_cleaning from "../assets/img/ui/icons/4.png";
-import landscaping from "../assets/img/ui/icons/5.png";
-import cosmetic_repairs from "../assets/img/ui/icons/6.png";
-import by_agreement from "../assets/img/ui/icons/7.png";
+import window_cleaning from "../assets/img/ui/icons/1.svg";
+import dry_cleaning from "../assets/img/ui/icons/2.svg";
+import post_construction from "../assets/img/ui/icons/3.svg";
+import pool_cleaning from "../assets/img/ui/icons/4.svg";
+import landscaping from "../assets/img/ui/icons/5.svg";
+import cosmetic_repairs from "../assets/img/ui/icons/6.svg";
+import by_agreement from "../assets/img/ui/icons/7.svg";
 
 const additionalServices = [
     {

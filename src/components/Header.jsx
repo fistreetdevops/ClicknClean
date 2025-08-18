@@ -4,7 +4,6 @@ import "../styles/plugins/bootstrap-grid.css";
 import "../styles/plugins/swiper.css";
 import "../styles/plugins/fancybox.css";
 import "../styles/plugins/fontawesome.css";
-import logo from "../assets/img/logo/logo-text-main.png";
 import logoIcon from "../assets/img/logo/logo-green-white.png";
 
 const Header = () => {

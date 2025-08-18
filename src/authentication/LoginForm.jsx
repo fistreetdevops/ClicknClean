@@ -1,22 +1,61 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [showOtp, setShowOtp] = useState(false);
-  const [phone, setPhone] = useState("");
+  const [phoneno, setPhoneno] = useState("");
   const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSendOtp = (e) => {
+  const handleSendOtp = async (e) => {
     e.preventDefault();
-    if (!phone.trim()) return alert("Please enter phone number");
-    // Here you can call your Send OTP API
-    setShowOtp(true);
+    if (!phoneno.trim()) return alert("Please enter phone number");
+    try {
+      setLoading(true);
+      const res = await fetch("http://192.168.1.4:8080/app/clicknclean/auth/login/send-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneno }),
+      });
+
+      if (!res.ok) throw new Error("Failed to send OTP");
+
+      const data = await res.json();
+      console.log("Send OTP response:", data);
+      alert("OTP sent successfully!");
+      setShowOtp(true);
+    } catch (err) {
+      console.error(err);
+      alert("Error sending OTP");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (!otp.trim()) return alert("Please enter OTP");
-    // Here you can call your Verify OTP API
-    alert("Logged in successfully!");
+    try {
+      setLoading(true);
+      const res = await fetch("http://192.168.1.4:8080/app/clicknclean/auth/login/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneno, otp }),
+      });
+
+      if (!res.ok) throw new Error("Failed to verify OTP");
+      const data = await res.json();
+      console.log("Verify OTP response:", data);
+      localStorage.setItem(data.token);
+      alert("Logged in successfully!");
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      alert("Invalid OTP or login failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,8 +76,9 @@ const LoginForm = () => {
                 placeholder="+91 ____-____"
                 className="mil-phone-input mil-br-md mil-bg-m-3"
                 autoComplete="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                value={phoneno}
+                onChange={(e) => setPhoneno(e.target.value)}
+                disabled={showOtp || loading}
               />
               <i className="far fa-mobile mil-a-2"></i>
             </div>

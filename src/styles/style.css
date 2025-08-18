@@ -17,12 +17,12 @@
 
 *::-moz-selection {
   color: #323842;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
 }
 
 *::selection {
   color: #323842;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +34,7 @@ html.lenis {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #EDCE29, #98CD4D);
+  background: linear-gradient(to right,  #34753C, #98CD4D);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -88,7 +88,7 @@ a {
   left: 0;
   height: 0.15rem;
   width: 0;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
   -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -2053,7 +2053,7 @@ text color
 }
 
 .mil-a-1 {
-  color: #EDCE29;
+  color: #98CD4D;
 }
 
 .mil-a-2 {
@@ -2092,7 +2092,7 @@ text color
 }
 
 .mil-hover-a-1:hover {
-  color: #EDCE29;
+  color: #98CD4D;
 }
 
 .mil-hover-a-2:hover {
@@ -2129,7 +2129,7 @@ background color
 }
 
 .mil-bg-a-1 {
-  background-color: #EDCE29 !important;
+  background-color: #98CD4D !important;
 }
 
 .mil-bg-a-2 {
@@ -2149,7 +2149,7 @@ background color
 }
 
 .mil-hover-bg-a-1:hover {
-  background-color: #EDCE29 !important;
+  background-color: #98CD4D !important;
 }
 
 .mil-hover-bg-a-2:hover {
@@ -2723,8 +2723,8 @@ hero cards
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-shadow: 4px 0 0 0px #EDCE29;
-  box-shadow: 4px 0 0 0px #EDCE29;
+  -webkit-box-shadow: 4px 0 0 0px #98CD4D;
+  box-shadow: 4px 0 0 0px #98CD4D;
 }
 
 .mil-discount-card .mil-text-part .mil-dscnt-star {
@@ -3006,7 +3006,7 @@ preloader
   align-items: center;
   background-color: #fff;
   border-radius: 10rem;
-  padding: 0rem;
+  padding: 2rem;
   -webkit-transform: scale(1) translateY(-3rem);
   transform: scale(1) translateY(-3rem);
 }
@@ -3994,7 +3994,7 @@ services
 }
 
 .mil-service-card:hover .mil-btn {
-  background-color: #EDCE29 !important;
+  background-color: #98CD4D !important;
 }
 
 .mil-service-card-long .mil-img-frame {
@@ -4347,7 +4347,7 @@ accordion (faq)
 
 .mil-accordion.mil-active .mil-icon {
   border-color: transparent;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   margin-top: 0.2rem;
@@ -4486,7 +4486,7 @@ blog
 }
 
 .mil-blog-card:hover .mil-descr .mil-btn {
-  background-color: #EDCE29 !important;
+  background-color: #98CD4D !important;
 }
 
 .mil-category li {
@@ -4633,7 +4633,7 @@ right side buttons
   font-family: "Font Awesome 5 Pro";
   font-weight: 400;
   content: "\f095";
-  color: #EDCE29;
+  color: #98CD4D;
   -webkit-animation: phone-move 4s ease-in-out infinite;
   animation: phone-move 4s ease-in-out infinite;
 }
@@ -5186,7 +5186,7 @@ checkbox
 }
 
 .mil-custom-checkbox.mil-checked {
-  border-color: #EDCE29 !important;
+  border-color: #98CD4D !important;
 }
 
 .mil-custom-checkbox.mil-checked.mil-already-included {
@@ -5200,7 +5200,7 @@ checkbox
   left: 3rem;
   font-weight: 400;
   font-size: 1.4rem;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
   padding: 0.3rem 1rem;
   border-radius: 0 0 0.5rem 0.5rem;
   -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
@@ -5569,7 +5569,7 @@ subscription
 }
 
 .mil-subscription-card:hover .mil-btn {
-  background-color: #EDCE29 !important;
+  background-color: #98CD4D !important;
 }
 
 /* -------------------------------------------
@@ -6411,7 +6411,7 @@ pagination
 
 .mil-page-pagination li.mil-current a {
   font-weight: 600;
-  background-color: #EDCE29;
+  background-color: #98CD4D;
 }
 
 .mil-page-pagination li.mil-current a:hover {

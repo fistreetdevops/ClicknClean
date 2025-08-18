@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../styles/style.css";
-import write from "../assets/img/ui/icons/13.png";
-import call from "../assets/img/ui/icons/14.png";
-import come from "../assets/img/ui/icons/15.png";
+import write from "../assets/img/ui/icons/13.svg";
+import call from "../assets/img/ui/icons/14.svg";
+import come from "../assets/img/ui/icons/15.svg";
 import bgImage from "../assets/img/ui/bg.png";
 import t5Image from "../assets/img/ui/t5.jpg";
 import cont2Image from "../assets/img/ui/cont-2.jpg";
