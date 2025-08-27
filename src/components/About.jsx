@@ -14,10 +14,10 @@ import user4 from "../assets/img/users/4.jpg";
 
 const About = () => {
   return (
-    <div className="mil-p-0-15 mil-relative">
+    <div className="mil-p-5 mil-relative">
       <img src={bg} alt="background" className="mil-bg" style={{ top: "-10rem" }} />
       <div className="container">
-        <div className="mil-section-title mil-mb-f mil-up">
+        <div className="mil-section-title mil-up mil-mb-40">
           <h2 className="mil-fs-36">A little bit about us</h2>
           <div className="mil-dots"></div>
           <b className="mil-fs-24">03</b>

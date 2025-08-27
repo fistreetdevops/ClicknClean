@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <div className={`mil-top-panel ${isScrolled ? "mil-scroll" : ""}`}>
+    <div className="mil-top-panel mil-scroll">
 
       <div className="mil-tp-content" style={{marginLeft:"3rem", marginRight:"3rem"}}>
         {/* Left: Logo */}
@@ -41,29 +41,25 @@ const Header = () => {
         {/* Center: Menu */}
         <nav className="mil-main-menu">
           <ul id="swupMenu" className="mil-menu-transition mil-aic mil-m-4">
-            <li className="mil-has-children">
+            <li>
               <a href="/">Home</a>
             </li>
-            <li className="mil-has-children">
+            <li>
               <a href="/services">Services</a>
             </li>
-            <li className="mil-has-children">
+            <li>
               <a href="#" onClick={scrollToSection()}>Subscriptions</a>
             </li>
-            <li><a href="/contactus">Contact</a></li>
           </ul>
         </nav>
+
+
 
         {/* Right: Contact + Button */}
         <div className="mil-right mil-jce">
           <div className="mil-tp-phone mil-aic mil-mr-60 mil-sm-mr-15">
-            <i
-              className="far fa-mobile mil-icon mil-sm mil-bg-a-2 mil-m-4 mil-mr-15 mil-sm-hidden"
-              style={{ paddingTop: "1.2rem" }}
-            ></i>
-            <a href="tel:+380123456789" className="mil-fw-600">
-              +91 99999-99999
-            </a>
+            <span> Signup | Login
+            </span>
           </div>
           <a
             href="/contactus"

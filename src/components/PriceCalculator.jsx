@@ -78,12 +78,11 @@ const PriceCalculator = () => {
     };
 
     return (
-        <div style={{
-            padding: "5rem",
+        <div className="mil-p-5" style={{
             marginTop: isServicesRoot ? "10rem" : "0",
         }}>
-            <div className="container mil-p-0-f">
-                <div className="mil-section-title mil-mb-f mil-up">
+            <div className="container">
+                <div className="mil-section-title mil-mb-40 mil-up">
                     <h2 className="mil-fs-36">Price Calculator</h2>
                     <div className="mil-dots"></div>
                     <b className="mil-fs-24">04</b>

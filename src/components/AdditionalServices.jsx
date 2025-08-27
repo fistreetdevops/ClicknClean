@@ -54,9 +54,8 @@ const additionalServices = [
 
 const AdditionalServices = () => {
     return (
-        <div className="mil-p-0-15">
-            <div className="container">
-                <div className="mil-section-title mil-mb-f mil-up">
+            <div className="container mil-p-5">
+                <div className="mil-section-title mil-up mil-mb-40">
                     <h2 className="mil-fs-36">Additional services</h2>
                     <div className="mil-dots"></div>
                     <b className="mil-fs-24">02</b>
@@ -93,7 +92,6 @@ const AdditionalServices = () => {
                     ))}
                 </div>
             </div>
-        </div>
     );
 };
 

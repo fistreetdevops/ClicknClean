@@ -716,6 +716,27 @@ flex
 spaces
 
 ------------------------------------------- */
+/* Padding all sides */
+.mil-p-10 {
+  padding: 10rem;
+}
+
+.mil-p-5 {
+  padding: 5rem;
+}
+
+.mil-p-3 {
+  padding: 3rem;
+}
+
+.mil-p-2 {
+  padding: 2rem;
+}
+
+.mil-p-1 {
+  padding: 1rem;
+}
+
 .mil-p-ff {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -1517,7 +1538,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Outfit", sans-serif;
+  font-family: sans-serif;
   color: #323842;
   font-weight: 600;
   line-height: 100%;
@@ -1525,12 +1546,12 @@ h6 {
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: sans-serif;
   font-size: 1.6rem;
 }
 
 .mil-ff-1 {
-  font-family: "Outfit", sans-serif;
+  font-family: sans-serif;
 }
 
 .mil-ff-2 {
@@ -2378,7 +2399,7 @@ hero 3
 
 ------------------------------------------- */
 .mil-hero-3 {
-  padding-top: 15rem;
+  padding-top: 2rem;
   height: 100vh;
   position: relative;
 }
@@ -3298,7 +3319,7 @@ main menu
   font-weight: 900;
   content: "\f111";
   margin-right: 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   color:  #98CD4D;
   position: absolute;
   -webkit-transform: scale(0);
@@ -3323,9 +3344,9 @@ main menu
 
 .mil-main-menu ul li a {
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   white-space: nowrap;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4020,6 +4041,46 @@ services
   padding: 6rem;
   height: 100%;
 }
+
+.service-title {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mil-cursor-pointer:hover .service-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.mil-cursor-pointer:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
 
 /* -------------------------------------------
 

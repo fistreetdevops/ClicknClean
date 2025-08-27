@@ -46,10 +46,10 @@ const subscriptionPlans = [
 
 const SubscriptionSection = () => {
   return (
-    <div className="mil-p-0-15">
+    <div className="mil-p-5">
       <div className="container">
         {/* Section Title */}
-        <div className="mil-section-title mil-mb-f mil-up">
+        <div className="mil-section-title mil-mb-40 mil-up">
           <h2 className="mil-fs-36">Cleaning subscription</h2>
           <div className="mil-dots"></div>
           <b className="mil-fs-24">05</b>

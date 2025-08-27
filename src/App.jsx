@@ -12,16 +12,17 @@ import PriceCalculator from "./components/PriceCalculator";
 import Services from "./components/Services";
 import SubscriptionSection from "./components/Subscriptions";
 import ContactUs from "./components/ContactUs";
-import ServiceDetails from "./components/ServiceDetails";
+// import ServiceDetails from "./components/ServiceDetails";
 import RegisterForm from "./authentication/RegisterForm";
 import LoginForm from "./authentication/LoginForm";
 
 function HomePage() {
   return (
     <>
+      <Services />
       <DiscountPopup />
       <Hero />
-      <Services id="scroll" />
+
       <About />
       <PriceCalculator />
       <SubscriptionSection id="subscriptions-section" />
@@ -42,7 +43,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/:id" element={<ServiceDetails />} />
+          {/* <Route path="/services/:id" element={<ServiceDetails />} /> */}
           <Route path="/calculator" element={<PriceCalculator />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />

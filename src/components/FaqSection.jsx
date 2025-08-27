@@ -22,7 +22,7 @@ const FaqSection = () => {
   return (
     <div className="mil-p-0-30" id="faq">
       <div className="container">
-        <div className="mil-section-title mil-mb-f mil-up">
+        <div className="mil-section-title mil-mb-40 mil-up">
           <h2 className="mil-fs-36">FAQ</h2>
           <div className="mil-dots"></div>
           <b className="mil-fs-24">06</b>
