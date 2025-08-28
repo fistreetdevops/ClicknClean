@@ -1,5 +1,5 @@
 import React from "react";
-import footerVideo from "../assets/img/ui/footer.mp4"; 
+import footerVideo from "../assets/img/ui/footer.mp4";
 
 const Footer = () => {
   return (
@@ -94,30 +94,13 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-lg-5 col-md-6 col-sm-12 mil-mb-60">
-              <div className="row mil-jcb">
-                <div className="col-6 mil-up">
-                  <h5 className="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Springfield</h5>
-                  <p className="mil-mb-20">
-                    71 South Los Carneros Road, <br /> Goleta, California 93117
-                  </p>
-                  <p className="mil-up-text mil-a-1">+1-877-926-5184</p>
-                </div>
-                <div className="col-6 mil-up">
-                  <h5 className="mil-fs-22 mil-fw-600 mil-m-3 mil-mb-20">Greenville</h5>
-                  <p className="mil-mb-20">
-                    71 South Los Carneros Road, <br /> Goleta, California 93117
-                  </p>
-                  <p className="mil-up-text mil-a-1">+31 174 705 811</p>
-                </div>
+            <div className="col-lg-5 col-md-6">
+              <div className="mil-jcc mil-p-f-1">
+                <p>© Copyright 2025 - Click N Clean. All Rights Reserved.</p>
               </div>
             </div>
           </div>
 
-          <div className="mil-dots mil-up"></div>
-          <div className="mil-footer-bottom mil-aic mil-jcb mil-up">
-            <p>© Copyright 2025 - Click N Clean. All Rights Reserved.</p>
-          </div>
         </div>
       </div>
     </footer>

@@ -59,7 +59,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container mil-p-f-30 mil-mb-15" style={{ width: "50%" }}>
+    <div className="container mil-mb-15" style={{ width: "50%" }}>
       <div className="mil-hero-form-frame mil-bg-m-4 mil-br-md">
         <div className="mil-aic mil-column">
           <h3 className="mil-fs-32 mil-tac mil-lh-140 mil-mb-60">

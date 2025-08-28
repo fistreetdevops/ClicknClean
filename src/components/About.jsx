@@ -14,7 +14,7 @@ import user4 from "../assets/img/users/4.jpg";
 
 const About = () => {
   return (
-    <div className="mil-p-5 mil-relative">
+    <div className="mil-p-5" >
       <img src={bg} alt="background" className="mil-bg" style={{ top: "-10rem" }} />
       <div className="container">
         <div className="mil-section-title mil-up mil-mb-40">
