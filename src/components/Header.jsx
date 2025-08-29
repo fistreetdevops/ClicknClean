@@ -45,7 +45,6 @@ const Header = () => {
           <img src={logoIcon} alt="logo-icon" style={{ width: "80px", height: "80px", objectFit: "contain" }} />
 
           <p className="gradient-text mil-ff-1 mil-fw-500" style={{ fontSize: "3.5rem" }}>Click N Clean</p>
-
         </div>
 
         {/* Center: Menu */}
@@ -62,8 +61,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-
-
 
         {/* Right: Contact + Button */}
         <div className="mil-right mil-jce">
@@ -93,7 +90,7 @@ const Header = () => {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        {mode === "login" ? <LoginForm /> : <RegisterForm />}
+        {mode === "login" ? <LoginForm switchToRegister={() => setMode("register")} /> : <RegisterForm switchToLogin={() => setMode("login")} />}
       </Modal>
 
     </div>

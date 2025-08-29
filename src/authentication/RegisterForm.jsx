@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const RegisterForm = () => {
+const RegisterForm = ({ switchToLogin }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState("Select Role");
 
@@ -12,7 +12,7 @@ const RegisterForm = () => {
 
   return (
     <div className="container">
-      <div className="mil-mb-15 mil-mt-ff mil-up mil-hero-form-frame mil-bg-m-4 mil-br-md">
+      <div className="mil-mb-15 mil-up mil-bg-m-4 mil-br-md">
         <div className="mil-aic mil-column">
           <h3 className="mil-fs-32 mil-tac mil-lh-140 mil-mb-60">
             Create Your Account <br /> and get started today
@@ -68,9 +68,8 @@ const RegisterForm = () => {
                 </div>
 
                 <ul
-                  className={`mil-select-dropdown mil-br-md ${
-                    isOpen ? "open" : ""
-                  }`}
+                  className={`mil-select-dropdown mil-br-md ${isOpen ? "open" : ""
+                    }`}
                 >
                   {["User", "Service Person"].map((role, index) => (
                     <li key={index}>
@@ -129,7 +128,7 @@ const RegisterForm = () => {
                 By clicking register, you agree to our Terms & Conditions
               </p>
               <button
-                className="mil-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale mil-ml-60 mil-sm-ml-30"
+                className="mil-btn mil-bg-a-1 mil-br-xl mil-hover-bri-105 mil-hover-scale mil-ml-ff mil-sm-ml-30"
                 type="submit"
               >
                 Register
@@ -138,6 +137,18 @@ const RegisterForm = () => {
           </div>
         </form>
       </div>
+      <div className="col-lg-12 mil-tac mil-mt-20">
+        <p className="mil-fs-16">
+          Already have an account?{" "}
+          <span
+            onClick={switchToLogin}
+            style={{ color: "#007bff", cursor: "pointer" }}
+          >
+            Login here
+          </span>
+        </p>
+      </div>
+
     </div>
   );
 };

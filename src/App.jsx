@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate, useSearchParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import About from "./components/About";
 import CallOrderPanel from "./components/CallOrderPanel";
@@ -12,11 +12,10 @@ import PriceCalculator from "./components/PriceCalculator";
 import Services from "./components/Services";
 import SubscriptionSection from "./components/Subscriptions";
 import ContactUs from "./components/ContactUs";
-import RegisterForm from "./authentication/RegisterForm";
-import LoginForm from "./authentication/LoginForm";
+import AdminLayout from "./AdminLayout";
 
+// ---------------- Public Website ----------------
 function HomePage() {
-
   return (
     <>
       <Services />
@@ -30,21 +29,33 @@ function HomePage() {
     </>
   );
 }
-function App() {
 
+// ---------------- App ----------------
+function App() {
   return (
     <Router>
-      <div className="mil-page-wrapper">
-        <Preloader />
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/calculator" element={<PriceCalculator />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        {/* Public Website */}
+        <Route
+          path="/*"
+          element={
+            <div className="mil-page-wrapper">
+              <Preloader />
+              <Header />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/contactus" element={<ContactUs />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/calculator" element={<PriceCalculator />} />
+              </Routes>
+              <Footer />
+            </div>
+          }
+        />
+
+        {/* Admin ERP (completely separate layout) */}
+        <Route path="/admin/*" element={<AdminLayout />} />
+      </Routes>
     </Router>
   );
 }

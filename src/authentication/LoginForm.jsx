@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({ switchToRegister }) => {
   const [showOtp, setShowOtp] = useState(false);
   const [phoneno, setPhoneno] = useState("");
   const [otp, setOtp] = useState("");
@@ -59,8 +59,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container mil-mb-15" style={{ width: "50%" }}>
-      <div className="mil-hero-form-frame mil-bg-m-4 mil-br-md">
+    <div className="container">
+      <div className="mil-bg-m-4 mil-br-md">
         <div className="mil-aic mil-column">
           <h3 className="mil-fs-32 mil-tac mil-lh-140 mil-mb-60">
             Welcome Back! <br /> Please Login
@@ -122,9 +122,12 @@ const LoginForm = () => {
             <div className="col-lg-12 mil-tac mil-mt-40">
               <p className="mil-fs-16">
                 Don’t have an account?{" "}
-                <a href="/register" className="mil-text-link mil-a-1">
+                <span
+                  onClick={switchToRegister}
+                  style={{ color: "#007bff", cursor: "pointer" }}
+                >
                   Register here
-                </a>
+                </span>
               </p>
             </div>
           )}
