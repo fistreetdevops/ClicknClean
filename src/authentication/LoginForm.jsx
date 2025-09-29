@@ -49,7 +49,7 @@ const LoginForm = ({ switchToRegister }) => {
       console.log("Verify OTP response:", data);
       localStorage.setItem(data.token);
       alert("Logged in successfully!");
-      navigate("/");
+      navigate("/OTP");
     } catch (err) {
       console.error(err);
       alert("Invalid OTP or login failed");

@@ -44,7 +44,7 @@ const Hero = () => {
 
                 <div className="mil-word-frame">
                   <h1 className="mil-fs-100 mil-sm-fs-72 mil-lh-110">
-                    <img src={t2} alt="text-img" className="mil-text-image mil-long" /> Cleaning
+                    <img src={t2} alt="text-img" className="mil-text-image mil-long" />Cleaning
                   </h1>
                 </div>
 

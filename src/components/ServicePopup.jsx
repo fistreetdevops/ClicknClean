@@ -1,7 +1,46 @@
-import React from "react";
+import { useState } from "react";
 
-const ServicePopup = ({ open, onClose, service, onSelect }) => {
+const ServicePopup = ({ open, onClose, service, onSelect, onAddToCart }) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubservices, setSelectedSubservices] = useState([]);
+
   if (!open || !service) return null;
+
+  const toggleSubservice = (sub) => {
+    setSelectedSubservices((prev) => {
+      if (prev.find((s) => s.name === sub.name)) {
+        return prev.filter((s) => s.name !== sub.name);
+      } else {
+        return [...prev, sub];
+      }
+    });
+  };
+
+  const handleAdd = () => {
+    if (!selectedCategory || selectedSubservices.length === 0) return;
+
+    const subservicesWithPrice = selectedSubservices.map((s) => {
+      let price = s.price;
+      if (typeof s.price === "object") {
+        price =
+          selectedCategory.toLowerCase() === "furnished"
+            ? s.price.furnished
+            : s.price.unfurnished;
+      }
+      return { name: s.name, price };
+    });
+
+    if (onAddToCart) {
+      onAddToCart({
+        ...service,
+        selectedCategory,
+        selectedSubservices: subservicesWithPrice,
+      });
+    }
+
+    setSelectedSubservices([]);
+    onClose();
+  };
 
   return (
     <div
@@ -32,7 +71,7 @@ const ServicePopup = ({ open, onClose, service, onSelect }) => {
           Select Options for {service.title}
         </h3>
 
-        {/* Apartment / Home options */}
+        {/* Categories */}
         {service.categories && (
           <div style={{ marginBottom: "15px" }}>
             <h4>Categories</h4>
@@ -47,8 +86,13 @@ const ServicePopup = ({ open, onClose, service, onSelect }) => {
                       margin: "5px 0",
                       cursor: "pointer",
                       width: "100%",
+                      background: selectedCategory === cat ? "#5E35B1" : "#fff",
+                      color: selectedCategory === cat ? "#fff" : "#000",
                     }}
-                    onClick={() => onSelect(cat)}
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      if (onSelect) onSelect(cat);
+                    }}
                   >
                     {cat}
                   </button>
@@ -63,34 +107,85 @@ const ServicePopup = ({ open, onClose, service, onSelect }) => {
           <div style={{ marginBottom: "15px" }}>
             <h4>Subservices</h4>
             <ul>
-              {service.subservices.map((s, i) => (
-                <li key={i}>
-                  <label>
-                    <input type="checkbox" /> {s.name} - ₹{s.price}
-                  </label>
-                </li>
+              {service.subservices.map((s, i) => {
+                let displayPrice;
+                if (typeof s.price === "object") {
+                  if (selectedCategory) {
+                    displayPrice =
+                      selectedCategory.toLowerCase() === "furnished"
+                        ? s.price.furnished
+                        : s.price.unfurnished;
+                  } else {
+                    displayPrice = `Furnished: ₹${s.price.furnished} / Unfurnished: ₹${s.price.unfurnished}`;
+                  }
+                } else {
+                  displayPrice = s.price;
+                }
+
+                const isChecked = selectedSubservices.find(
+                  (sub) => sub.name === s.name
+                );
+
+                return (
+                  <li key={i} style={{ margin: "5px 0" }}>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={!!isChecked}
+                        onChange={() => toggleSubservice(s)}
+                      />{" "}
+                      {s.name} - {displayPrice}
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+
+        {/* Included */}
+        {service.included && service.included.length > 0 && (
+          <div style={{ marginBottom: "15px" }}>
+            <h4>What’s Included</h4>
+            <ul>
+              {service.included.map((item, i) => (
+                <li key={i}>✅ {item}</li>
               ))}
             </ul>
           </div>
         )}
 
+        {/* Excluded */}
+        {service.excluded && service.excluded.length > 0 && (
+          <div style={{ marginBottom: "15px" }}>
+            <h4>What’s Excluded</h4>
+            <ul>
+              {service.excluded.map((item, i) => (
+                <li key={i}>❌ {item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Add to Cart Button */}
         <button
-          onClick={onClose}
+          onClick={handleAdd}
           style={{
             marginTop: "10px",
             padding: "10px",
             width: "100%",
-            background: "#5E35B1",
+            background: "#43A047",
             color: "#fff",
             border: "none",
             borderRadius: "6px",
+            cursor: "pointer",
           }}
+          disabled={!selectedCategory || selectedSubservices.length === 0}
         >
-          Close
+          Add
         </button>
       </div>
     </div>
   );
 };
-
 export default ServicePopup;
